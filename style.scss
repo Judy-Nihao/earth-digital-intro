@@ -172,7 +172,6 @@ body{
 .slogan-text{
     position: relative;    
     align-self: flex-start;
-    display: inline-block;
     left: -20%;
 
     color: $bg;
@@ -294,8 +293,7 @@ body{
         }
       }
 
-
-    // 行動版套用 active
+    //行動版套用 active
       &:active::before{
         transform: translateY(-100%);
       }

@@ -1,5 +1,5 @@
 
-window.addEventListener("load", function(event) {
+window.addEventListener("DOMContentLoaded", function(event) {
     intro();
   });
 
@@ -48,24 +48,15 @@ function intro(){
         left: "-50px",
         ease: "Power4.easeInOut",
     }, 2.5)
+    .from(".brand",{
+        opacity: "0",
+        ease: "Power4.easeInOut",
+    }, 2.5)
+    .from(".menu",{
+        opacity: "0",
+        ease: "Power4.easeInOut",
+    }, 2.5)
 }
-
-// function sloganAnimation(){
-//     timeline    
-//     .from(".slogan-block",{
-//         width: "0",
-//         ease: "Power4.easeInOut",
-//         stagger: 0.25,
-//     },2.25)
-//     .from(".slot-machine-block",{
-//         width: "0",
-//         ease: "Power4.easeInOut",
-//     }, "<0.75")
-//     .from(before,{
-//         left: "-50px",
-//         ease: "Power4.easeInOut",
-//     }, 2.5)
-// }
 
     // "<0.5" 代表「相對延遲」，是相對於於前一個動畫，延遲 delay 0.5秒
     // 要注意 "<0.5" 引號內左右兩側，不可以有多餘空白，否則會失效。
@@ -95,8 +86,30 @@ menu.addEventListener("click", function(e){
             delay: 1
         })
         
-        console.log("點擊到選單項目");
     }
 });
 
+// 瀏覽器視窗尺寸有變，就讓 slogan 底色塊配合文字大小，重新抓一次寬度
+window.addEventListener("resize",function(){
+    document.querySelectorAll(".slogan-block").forEach(function(item){
+        item.style.width = "100%";
+    })
+    document.querySelector(".slot-machine-block").style.width = "100%";
+});
 
+// function sloganAnimation(){
+//     timeline    
+//     .from(".slogan-block",{
+//         width: "0",
+//         ease: "Power4.easeInOut",
+//         stagger: 0.25,
+//     },2.25)
+//     .from(".slot-machine-block",{
+//         width: "0",
+//         ease: "Power4.easeInOut",
+//     }, "<0.75")
+//     .from(before,{
+//         left: "-50px",
+//         ease: "Power4.easeInOut",
+//     }, 2.5)
+// }

@@ -142,7 +142,6 @@ body {
 .slogan-text {
   position: relative;
   align-self: flex-start;
-  display: inline-block;
   left: -20%;
   color: #f1f2f5;
   font-size: 3.25vw;
