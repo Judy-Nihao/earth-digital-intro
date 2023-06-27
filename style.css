@@ -1,0 +1,292 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: "Roboto", "Noto Sans TC", sans-serif;
+  background-color: #f1f2f5;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* 初始覆蓋  */
+.revealer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 110%;
+  height: 100vh;
+  background-color: #1fe193;
+  z-index: 2;
+}
+
+.loader-logo {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.brand {
+  display: block;
+  position: fixed;
+  top: 4.5rem;
+  left: 5em;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  .brand {
+    top: 2rem;
+    left: 2rem;
+  }
+}
+.brand .brand-logo {
+  width: 1.85vw;
+  min-width: 18px;
+  height: 1.85vw;
+  margin-bottom: 0.75rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 576px) {
+  .brand .brand-logo {
+    width: 40%;
+    height: 40%;
+  }
+}
+.brand .brand-name {
+  color: #31383f;
+  font-size: 0.6em;
+  letter-spacing: 0.3em;
+  padding: 0.2em;
+  font-weight: 600;
+}
+.brand .brand-name p:first-child {
+  color: #1fe193;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+}
+@media (max-width: 576px) {
+  .brand .brand-name {
+    display: none;
+  }
+}
+
+.menu {
+  position: fixed;
+  z-index: 1;
+  top: 4vw;
+  right: 5vw;
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  transform: translateX(105%) rotate(90deg);
+  transform-origin: top left;
+}
+.menu .menu-item {
+  background-color: #333;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.menu a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 0.45rem 0.65rem;
+}
+
+.menu-item.selected {
+  background-color: #1fe193;
+}
+
+.landing-slogans {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  .landing-slogans {
+    writing-mode: vertical-rl;
+  }
+}
+
+.slogan-text {
+  position: relative;
+  align-self: flex-start;
+  display: inline-block;
+  left: -20%;
+  color: #f1f2f5;
+  font-size: 3.25vw;
+  padding: 0.35rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .slogan-text {
+    left: 0;
+    font-size: 2rem;
+    padding: 0;
+    margin-bottom: 0;
+    margin-right: 0.75rem;
+  }
+}
+
+.slogan-text:nth-child(4) {
+  margin-bottom: 0;
+}
+
+.slogan-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #31383f;
+}
+@media (max-width: 768px) {
+  .slogan-block {
+    left: 4px;
+  }
+}
+
+.landing-slogans a {
+  position: absolute;
+  bottom: 0;
+  right: 53%;
+  font-size: 3.25vw;
+  padding: 0.35rem 0;
+  line-height: 1.2;
+}
+
+.slot-machine {
+  position: relative;
+  display: block;
+  color: transparent;
+  overflow: hidden;
+}
+.slot-machine .slot-machine-block {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #28E295;
+}
+@media (max-width: 768px) {
+  .slot-machine {
+    display: none;
+  }
+}
+.slot-machine:hover {
+  background-color: #F96664;
+  animation: bgc-change 1.85s infinite;
+}
+@keyframes bgc-change {
+  0% {
+    background-color: #F96664;
+  }
+  50% {
+    background-color: #FA3D3C;
+  }
+  100% {
+    background-color: #F96664;
+  }
+}
+.slot-machine::before {
+  content: "HOW?";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #f1f2f5;
+  font-size: 0.5em;
+  font-weight: 500;
+  transition: all 0.35s;
+}
+.slot-machine::after {
+  content: "如何幫到你";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 100%;
+  left: 0;
+  text-align: center;
+  color: #f1f2f5;
+  font-size: 0.3em;
+  width: 100%;
+  height: 100%;
+  transition: all 0.35s;
+}
+@media (any-hover: hover) {
+  .slot-machine:hover::before {
+    transform: translateY(-100%);
+  }
+  .slot-machine:hover::after {
+    transform: translateY(-100%);
+  }
+}
+.slot-machine:active::before {
+  transform: translateY(-100%);
+}
+.slot-machine:active::after {
+  transform: translateY(-100%);
+}
+
+.copyright {
+  display: block;
+  position: fixed;
+  bottom: 1.8em;
+  left: 2em;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  font-size: 0.6em;
+  opacity: 0.4;
+  letter-spacing: 0.05em;
+  transform-origin: top left;
+  transform: rotate(-90deg);
+}
+.copyright::after {
+  content: "";
+  display: inline-block;
+  width: 18vw;
+  height: 0;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.5);
+  margin-left: 1em;
+  vertical-align: middle;
+}/*# sourceMappingURL=style.css.map */
